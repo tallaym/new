@@ -1,5 +1,6 @@
 name: Deploy to S3
-push:
+on:
+  push:
     branches:
       - dev
 
