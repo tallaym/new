@@ -30,9 +30,9 @@ jobs:
 
     - name: Deploy to AWS Lightsail
       run: 
-      touch mykey.pem
-      echo "${{ secrets.AWS_LIGHTSAIL_SSH_KEY }}" > mykeyy.pem
-      chmod 600 ./mykey.pem
-      ssh -o StrictHostKeyChecking=no -i mykey.pem ubuntu@${{ secrets.AWS_LIGHTSAIL_PUBLIC_IP }} 'mkdir -p /var/www/html/${{ secrets.AWS_BUCKET_NAME }}'
-      scp -o StrictHostKeyChecking=no -i mykey.pem -r ./* ubuntu@${{ secrets. AWS_LIGHTSAIL_PUBLIC_IP }}:/var/www/html/${{ secrets.AWS_BUCKET_NAME }}
+        touch mykey.pem
+        echo "${{ secrets.AWS_LIGHTSAIL_SSH_KEY }}" > mykeyy.pem
+        chmod 600 ./mykey.pem
+        ssh -o StrictHostKeyChecking=no -i mykey.pem ubuntu@${{ secrets.AWS_LIGHTSAIL_PUBLIC_IP }} 'mkdir -p /var/www/html/${{ secrets.AWS_BUCKET_NAME }}'
+        scp -o StrictHostKeyChecking=no -i mykey.pem -r ./* ubuntu@${{ secrets. AWS_LIGHTSAIL_PUBLIC_IP }}:/var/www/html/${{ secrets.AWS_BUCKET_NAME }}
 
